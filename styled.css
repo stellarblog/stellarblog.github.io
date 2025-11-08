@@ -1,0 +1,337 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0f1e, #1a2a4a);
+            color: #e0e0e0;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #4a86e8;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #4a86e8, #a2c2f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: #a2c2f0;
+            font-size: 1.2rem;
+        }
+
+        .auth-section {
+            background: rgba(20, 25, 40, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(74, 134, 232, 0.3);
+        }
+
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(74, 134, 232, 0.3);
+        }
+
+        .auth-tab {
+            padding: 1rem 2rem;
+            background: none;
+            border: none;
+            color: #a2c2f0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .auth-tab.active {
+            color: #4a86e8;
+            border-bottom-color: #4a86e8;
+        }
+
+        .auth-form {
+            display: none;
+        }
+
+        .auth-form.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #a2c2f0;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(10, 15, 30, 0.8);
+            border: 1px solid rgba(74, 134, 232, 0.3);
+            border-radius: 8px;
+            color: #e0e0e0;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #4a86e8;
+        }
+
+        .btn {
+            background: #4a86e8;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #3a76d8;
+        }
+
+        .btn:disabled {
+            background: #2a5a9a;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid #4a86e8;
+            color: #4a86e8;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(74, 134, 232, 0.1);
+        }
+
+        .editor-section {
+            display: none;
+            background: rgba(20, 25, 40, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(74, 134, 232, 0.3);
+        }
+
+        .editor-section.active {
+            display: block;
+        }
+
+        .editor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(74, 134, 232, 0.3);
+        }
+
+        .editor-title {
+            font-size: 1.5rem;
+            color: #4a86e8;
+        }
+
+        .editor-controls {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .editor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .editor-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-section {
+            background: rgba(30, 35, 50, 0.6);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(74, 134, 232, 0.2);
+        }
+
+        .form-section h3 {
+            color: #4a86e8;
+            margin-bottom: 1rem;
+        }
+
+        .markdown-editor {
+            grid-column: 1 / -1;
+        }
+
+        .markdown-editor textarea {
+            width: 100%;
+            height: 400px;
+            padding: 1rem;
+            background: rgba(10, 15, 30, 0.8);
+            border: 1px solid rgba(74, 134, 232, 0.3);
+            border-radius: 8px;
+            color: #e0e0e0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            resize: vertical;
+        }
+
+        .markdown-editor textarea:focus {
+            outline: none;
+            border-color: #4a86e8;
+        }
+
+        .preview-section {
+            grid-column: 1 / -1;
+            background: rgba(30, 35, 50, 0.6);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(74, 134, 232, 0.2);
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .preview-section h3 {
+            color: #4a86e8;
+            margin-bottom: 1rem;
+        }
+
+        .preview-content {
+            color: #d0d0d0;
+            line-height: 1.8;
+        }
+
+        .preview-content h1, .preview-content h2, .preview-content h3 {
+            color: #4a86e8;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .preview-content p {
+            margin-bottom: 1rem;
+        }
+
+        .preview-content code {
+            background: rgba(74, 134, 232, 0.2);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .preview-content pre {
+            background: rgba(10, 15, 30, 0.8);
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .existing-blogs {
+            margin-top: 2rem;
+        }
+
+        .blogs-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .blog-item {
+            background: rgba(30, 35, 50, 0.6);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(74, 134, 232, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .blog-info h4 {
+            color: #4a86e8;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-meta {
+            color: #a2c2f0;
+            font-size: 0.9rem;
+        }
+
+        .blog-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .alert {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .alert-success {
+            background: rgba(76, 175, 80, 0.2);
+            border: 1px solid rgba(76, 175, 80, 0.5);
+            color: #4caf50;
+        }
+
+        .alert-error {
+            background: rgba(244, 67, 54, 0.2);
+            border: 1px solid rgba(244, 67, 54, 0.5);
+            color: #f44336;
+        }
+
+        .user-info {
+            display: none;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .user-info.active {
+            display: flex;
+        }
+
+        .logout-btn {
+            background: transparent;
+            border: 1px solid #f44336;
+            color: #f44336;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background: rgba(244, 67, 54, 0.1);
+        }

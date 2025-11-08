@@ -1,0 +1,15 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "The Physics of Neutron Stars",
+            "excerpt": "Exploring the incredible density and magnetic fields of these cosmic phenomena that defy our understanding of matter.",
+            "date": "March 15, 2025",
+            "image": "🌌",
+            "category": "Astrophysics",
+            "readTime": "8 min read",
+            "author": "void",
+            "file": "blog1.md"
+        }
+    ]
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styled.css">
+    <title>Stellar Blog Editor</title>
+</head>
+<body>
+    <a style="color: whitesmoke;" href="../index.html">go to main page<</a>
+    <div class="container">
+        <div class="header">
+            <h1 class="logo">Editor</h1>
+            <p class="subtitle">Create and manage a blog</p>
+        </div>
+
+        <!-- Alert Messages -->
+        <div class="alert" id="alertMessage"></div>
+
+        <!-- User Info -->
+        <div class="user-info" id="userInfo">
+            <span>Welcome, <strong id="userName"></strong>!</span>
+            <button class="logout-btn" id="logoutBtn">Logout</button>
+        </div>
+
+        <!-- Authentication Section -->
+        <div class="auth-section" id="authSection">
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Login</button>
+                <button class="auth-tab" data-tab="register">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <form class="auth-form active" id="loginForm" data-type="login">
+                <div class="form-group">
+                    <label for="loginUsername">Username</label>
+                    <input type="text" id="loginUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn" id="loginBtn">Login</button>
+            </form>
+
+            <!-- Register Form -->
+            <form class="auth-form" id="registerForm" data-type="register">
+                <div class="form-group">
+                    <label for="registerUsername">Username</label>
+                    <input type="text" id="registerUsername" required minlength="3">
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Confirm Password</label>
+                    <input type="password" id="registerConfirmPassword" required>
+                </div>
+                <button type="submit" class="btn" id="registerBtn">Register</button>
+            </form>
+        </div>
+
+        <!-- Blog Editor Section -->
+        <div class="editor-section" id="editorSection">
+            <div class="editor-header">
+                <h2 class="editor-title">Create New Blog Post</h2>
+                <div class="editor-controls">
+                    <button class="btn btn-secondary" id="previewBtn">Preview</button>
+                    <button class="btn" id="saveBtn">Save Blog</button>
+                </div>
+            </div>
+
+            <div class="editor-grid">
+                <!-- Blog Metadata -->
+                <div class="form-section">
+                    <h3>Blog Information</h3>
+                    <div class="form-group">
+                        <label for="blogTitle">Title</label>
+                        <input type="text" id="blogTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="blogExcerpt">Excerpt</label>
+                        <input type="text" id="blogExcerpt" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="blogCategory">Category</label>
+                        <input type="text" id="blogCategory" required>
+                    </div>
+                </div>
+
+                <!-- Additional Info -->
+                <div class="form-section">
+                    <h3>Additional Information</h3>
+                    <div class="form-group">
+                        <label for="blogAuthor">Author</label>
+                        <input type="text" id="blogAuthor" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="blogReadTime">Read Time</label>
+                        <input type="text" id="blogReadTime" placeholder="e.g., 5 min read" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="blogImage">Emoji Icon</label>
+                        <input type="text" id="blogImage" placeholder="e.g., 🌌" required>
+                    </div>
+                </div>
+
+                <!-- Markdown Editor -->
+                <div class="markdown-editor">
+                    <h3>Content (Markdown)</h3>
+                    <textarea id="blogContent" placeholder="Write your blog content in Markdown format..."></textarea>
+                </div>
+
+                <!-- Preview -->
+                <div class="preview-section">
+                    <h3>Preview</h3>
+                    <div class="preview-content" id="previewContent">
+                        Preview will appear here...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Existing Blogs -->
+            <div class="existing-blogs">
+                <h3>Existing Blogs</h3>
+                <div class="blogs-list" id="blogsList">
+                    <!-- Blogs will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+<script src="auth.js"></script>
+<script src="login.js"></script>
+<script src="maind.js"></script>
+</body>
+</html>
